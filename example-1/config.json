@@ -1,0 +1,19 @@
+{
+  "connection": {
+    "user": "guest",
+    "pass": "guest",
+    "server": "127.0.0.1",
+    "port": 5672,
+    "timeout": 2000,
+    "vhost": "examples"
+  },
+  "exchanges": [
+    { "name": "events", "type": "topic", "persistent": true }
+  ],
+  "queues": [
+    { "name": "analytics" }
+  ],
+  "bindings": [
+    { "exchange": "events", "target": "analytics", "keys": ["event.#"] }
+  ]
+}
